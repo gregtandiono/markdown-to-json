@@ -1,4 +1,5 @@
 # Markdown YAML front-matter to JSON
+**version:** 0.0.1
 
 This is a modified version from
 [Scott Stanfield's Markdown to JSON](https://github.com/scottstanfield/markdown-to-json) version.
