@@ -1,5 +1,18 @@
 # Markdown YAML front-matter to JSON
 
+This is a modified version from
+[Scott Stanfield's Markdown to JSON](https://github.com/scottstanfield/markdown-to-json) version.
+
+## Modification Note:
+Deleted the `delete _metadata['content']` method in `m2j.js` because
+without `_metadata['content']` the JSON object only spits out a preview
+of the content below the YAML front matter chunk
+
+## Credit:
+The credit goes to [Scott Stanfield](https://github.com/scottstanfield) for creating this module.
+
+## Original Documentation from the original Repo:
+
 `m2j.js` is used to read a folder of Markdown files, pulling out the YAML front matter from each, and saving it all as a JSON object.
 
 This is especially useful if you have a folder full of Markdown files
@@ -7,7 +20,7 @@ that you want scanned and processed into a single JSON file, which can
 then be consumed by Angular on the client, cached in a Node server, or
 saved in a nosql database.
 
-In addition to moving the YAML to JSON, a few extra elements are created: 
+In addition to moving the YAML to JSON, a few extra elements are created:
 
 -  `iso8601` [formatted][1] from `date` using [Moment.js][2]
 -  `preview` is first 70 or so characters of the actual raw markdown content, with ellipses at the end
@@ -27,7 +40,7 @@ _Example_
     -w --width <int>         max width of preview text [70]
     -p --pretty              format JSON with newlines
     -o --outfile <filename>  filename to save json to [output.json]
-    
+
 
 % m2j.js lottery.ms
 ```
@@ -43,10 +56,10 @@ template: article.jade
 tags:
   - Fiction
   - Russian
-  
+
 ---
 
-Ivan Dmitritch, a middle-class man who lived with his family on an income of twelve hundred a year and was very well satisfied with his lot, sat down on the sofa after supper and began reading the newspaper. 
+Ivan Dmitritch, a middle-class man who lived with his family on an income of twelve hundred a year and was very well satisfied with his lot, sat down on the sofa after supper and began reading the newspaper.
 
 ```
 
